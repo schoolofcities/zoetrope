@@ -3,8 +3,8 @@
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=drawing">
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    center: {lat: 37.873103, lng: -122.259420},
-    zoom: 8,
+    center: {lat: 43.683976, lng: -79.364945}, 
+    zoom: 11,
     mapTypeId: google.maps.MapTypeId.HYBRID,
     gestureHandling: "greedy",
   });
