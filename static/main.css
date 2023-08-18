@@ -2,6 +2,7 @@ body {
   background: #fafafa;
   color: #333333;
   margin-top: 5rem;
+  /* font-family: "Trade Gothic Bold LT", sans-serif;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,8 +19,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .bg-nav {
-  /* background-color: #5f788a; */
-  background-color: #687890
+  background-color: #1E3765
 }
 
 .site-header .navbar-nav .nav-link {
