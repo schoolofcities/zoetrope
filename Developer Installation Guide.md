@@ -1,5 +1,8 @@
 *Prereqs: git, Python 3.6 or later*
-1. Clone the repository from Github, i.e. in terminal `git clone https://github.com/schoolofcities/zoetrope.git`
+
+This is the developer installation guide for Zoetrope, to help you run Zoetrope locally on your own machine. 
+
+1. Clone the repository from Github, i.e. in your chosen terminal, `git clone https://github.com/schoolofcities/zoetrope.git`
 
 2. In terminal, set up a working environment using conda or virtualenv:
     * Using Conda:
@@ -16,7 +19,7 @@
         4. Install the packages from file: `pip install -r requirements.txt`
     * In either case, if installing the packages from the `requirements.txt` fails, install the packages individually using pip or conda. 
 
-3. Create a `.env` file in the same directory as `manage.py`, containing the following variables ([guide](https://pypi.org/project/python-dotenv/) for python-dotenv):
+3. Create or modify the `.env` file in the same directory as `manage.py`, containing the following variables ([guide](https://pypi.org/project/python-dotenv/) for python-dotenv):
     * _make sure_ `DEBUG = 1`
     * ZOE_SECRET_KEY
       * generate a value using `django.core.management.utils.get_random_secret_key`
@@ -31,9 +34,9 @@
       * AMAZON_S3_ACCESS_KEY_ID
       * AMAZON_S3_SECRET_ACCESS_KEY
 
-4. Create a database by running `manage.py`:
-    1. first check for changes: `python manage.py makemigrations`
-    2. then create database: `python manage.py migrate`
+4. Create a database by running `manage.py` in terminal:
+    1. First check for changes: `python manage.py makemigrations`
+    2. Then create the database: `python manage.py migrate`
 
-5. Run development server (`python3 manage.py runserver`)
-6. Go to link specified in terminal
+5. Run development server in terminal: `python manage.py runserver`
+6. Go to link specified in the terminal.
