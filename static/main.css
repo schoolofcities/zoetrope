@@ -1,8 +1,20 @@
+@font-face {
+  font-family: "TradeGothic LT";
+  src: url("fonts/Trade\ Gothic\ LT.ttf") format("truetype");
+  /* src: url("fonts/Trade\ Gothic\ LT.ttf") format("truetype"),
+       url("fonts/Trade\ Gothic\ LT\ Oblique.ttf") format("truetype"),
+       url("fonts/Trade\ Gothic\ LT\ Light.ttf") format("truetype"),
+       url("fonts/Trade\ Gothic\ LT\ Bold.ttf") format("truetype"),
+       url("fonts/Trade\ Gothic\ LT\ Bold\ Oblique.ttf") format("truetype"); */
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background: #fafafa;
   color: #333333;
   margin-top: 5rem;
-  /* font-family: "Trade Gothic Bold LT", sans-serif;*/
+  font-family: "TradeGothic LT", Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
