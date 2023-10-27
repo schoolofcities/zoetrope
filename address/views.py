@@ -79,3 +79,13 @@ def address_success(request, address, point):
         'no_info_messages': True
     }
     return render(request, "address/address_success.html", context)
+
+
+@login_required
+@require_api_calls_remaining
+def address_pin(request):
+    context = {
+        'MAPS_API_KEY': settings.MAPS_API_KEY,
+        'title': 'Address Pin'
+    }
+    return render(request, "address/address_pin.html", context)
