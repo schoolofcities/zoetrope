@@ -1,11 +1,9 @@
 @font-face {
   font-family: "TradeGothic LT";
-  src: url("fonts/Trade\ Gothic\ LT.ttf") format("truetype");
-  /* src: url("fonts/Trade\ Gothic\ LT.ttf") format("truetype"),
-       url("fonts/Trade\ Gothic\ LT\ Oblique.ttf") format("truetype"),
+  /* src: url("fonts/Trade\ Gothic\ LT\ Light.ttf") format("truetype"); */
+  src: url("fonts/Trade\ Gothic\ LT.ttf") format("truetype"),
        url("fonts/Trade\ Gothic\ LT\ Light.ttf") format("truetype"),
-       url("fonts/Trade\ Gothic\ LT\ Bold.ttf") format("truetype"),
-       url("fonts/Trade\ Gothic\ LT\ Bold\ Oblique.ttf") format("truetype"); */
+       url("fonts/Trade\ Gothic\ LT\ Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -19,6 +17,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
+  font-family: "TradeGothic LT Bold", Arial, sans-serif;
 }
 
 ul {
@@ -36,6 +35,7 @@ a:link, a:visited, a:hover, a:active {
 
 .site-header .navbar-nav .nav-link {
   color: #cbd5db;
+  font-family: "TradeGothic LT Bold", Arial, sans-serif;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -44,6 +44,10 @@ a:link, a:visited, a:hover, a:active {
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
+}
+
+.site-header .navbar-brand {
+  font-family: "TradeGothic LT Bold", Arial, sans-serif;
 }
 
 .account-heading {
