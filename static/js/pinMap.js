@@ -1,6 +1,7 @@
 let map;
 let marker;
 let geocoder;
+let geocode_result;
 let responseDiv;
 let response;
 
@@ -59,8 +60,8 @@ async function initMap() {
   responseDiv.appendChild(response);
 
   // define where map controls and response are displayed
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(submitButton);
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(clearButton);
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(submitButton);
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(inputText);
   map.controls[google.maps.ControlPosition.RIGHT_TOP].push(responseDiv);
 
@@ -72,6 +73,9 @@ async function initMap() {
   // create event listeners for buttons and clicking the map
   map.addListener("click", (e) => {
     geocode({ location: e.latLng });
+    console.log("after geocode: " + geocode_result);
+    document.getElementById("select-location").value = geocode_result;
+    console.log("input value: " + document.getElementById("select-location").value);
   });
   submitButton.addEventListener("click", () =>
     geocode({ address: inputText.value }),
@@ -101,18 +105,32 @@ function geocode(request) {
     .then((result) => {
       const { results } = result;
 
-      map.setCenter(results[0].geometry.location);
+      // map.setCenter(results[0].geometry.location);
       marker.setPosition(results[0].geometry.location);
       marker.setMap(map);
       responseDiv.style.display = "block";
-      // set innerText to JSON-style string of top formatted address result
-      response.innerText = JSON.stringify(results[0].formatted_address, null, 2);
-      // console.log(results[0]);
-      return results;
+
+      const first_result_obj = results[0];
+      const address = first_result_obj.formatted_address
+      const coord = first_result_obj.geometry.location.toJSON()
+      const lat = coord.lat
+      const lng = coord.lng
+      let result_list = [address, lat, lng]
+      console.log("result_list: " + result_list);
+      geocode_result = result_list;
+      console.log("geocode_result in func: " + geocode_result);
+
+      // set innerText to string of results
+      response.innerText = "\n" + address + "\n" + lat + ", " + lng;
+      
+      // console.log(result_list);
+      return result_list;
     })
     .catch((e) => {
       alert("Geocode was not successful for the following reason: " + e);
     });
+
+    console.log("geocode_result in func 2: " + geocode_result);
 }
   
 initMap();
