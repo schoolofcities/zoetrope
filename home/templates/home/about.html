@@ -1,39 +1,62 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-  <div>
-    <img src="{% static 'home/UDP_Logo.png' %}" alt="UDP Logo" align="center" max-height="100%" width="50%">
+  <div style="overflow: hidden">
+    <p>
+      <img src="{% static 'home/UofT+SoC_RGB.png' %}" alt="UofT SoC Logo" align="center" max-height="150" width="420">
+      <img src="{% static 'home/UDP_Logo.png' %}" alt="UDP Logo" align="center" height="100" width="310">
+    </p>
   </div>
-  <h1>What is Zoetrope?</h1>
-  <p>
-    Zoetrope is an open source tool facilitating the collection, processing, and analysis of Google Street 
-    view data accross time and geographies. It is meant to serve the diverse community of 
-    city enthusiasts, urban planners, and researchers interested in exploring the richness of 
-    temporal street view imagery. In this spirit, Zoetrope provides an intuitive graphical user interface 
-    for easy image sampling while also making accessible useful libraries for avid programmers seeking more customization.
-  </p>
-  <br>
-  <h1>Why is it called Zoetrope?</h1>
-  <!-- <div>
-    <img src="{% static 'home/zoetrope-img.jpeg' %}" alt="Picture of a zoetrope" align="left" width="200px" height="auto">
-  </div> -->
-  <p>
-    The name Zoetrope was chosen to echo the magic of early advances in animation which created the illusion of motion 
-    by rotating static images over a cylinder. Similarly, we hope that by making accessible images of the same place over time, 
-    Zoetrope will provide new perspectives on changes happening around us.
-  </p>
-  <br>
-  <h1>About the Team</h1>
-  <p>
-    <b>Shayan Ghosh</b> is the primary developer of Zoetrope and a current 
-    undergraduate student at UC Berkeley studying Computer Science and City Planning.
-    <br>He is passionate about equitable housing and transportation.
-  </p>
-  <p>
-    <b>Moulay-Zaidane Draidia</b> is a data scientist particularly intersted on socially driven and conscentious use of 
-    Machine Learning technologies. His prior experiences include assessing and mitigating risk in micro credit lending in Morocco, 
-    developping medical digital assistants, and researching ways to train large language models more efficiently. 
-    Moulay-Zaidane first began work on Zoetrope as an undergraduate at UC Berkeley, eager to explore how people 
-    perceived changes in their environments.
-  </p>
+  <div>
+    <h1>What is Zoetrope?</h1>
+    <p>
+      Zoetrope is an open-source tool created to facilitate the collection, processing, 
+      and analysis of Google Street View data across time and geographies. The tool aims 
+      to serve the diverse community of city enthusiasts, urban planners, researchers, 
+      and others interested in exploring the richness of temporal street view imagery, 
+      without having to navigate single year panoramas through manually interfacing with 
+      Google Maps and Street View. For example, a Zoetrope user can browse individual street 
+      addresses or sample from neighbourhoods to look at how an address or the neighbourhood's 
+      streetscape changes over the years, potentially identifying physical indicators of growth, 
+      gentrification, or dilapidation in recent years. 
+      <p>
+      Zoetrope was originally developed as part of the Urban Displacement Project at UC Berkeley 
+      and is currently hosted by the School of Cities at the University of Toronto. 
+      <a href="https://github.com/schoolofcities/zoetrope">Zoetrope's public GitHub repository</a> 
+      is available as part of the School of Cities organization. As an open-source project, Zoetrope 
+      is also accessible for programmers seeking to adapt and customize their own Zoetrope; however, 
+      Zoetrope is not taking contributions at this time. Zoetrope creates a graphical user interface 
+      (GUI) to improve access to street view panoramas over time grabbed using the 
+      <a href="https://github.com/robolyst/streetview">streetview python library</a> by 
+      Adrian Letchford and the Google Maps API. 
+    </p>
+    <br>
+    <h1>Why is it called Zoetrope?</h1>
+    <!-- <div>
+      <img src="{% static 'home/zoetrope-img.jpeg' %}" alt="Picture of a zoetrope" align="left" width="200px" height="auto">
+    </div> -->
+    <p>
+      The name Zoetrope was chosen to reflect the magic of early advances in animation, which 
+      created the illusion of motion by rotating static images over a cylinder. Similarly, the 
+      Zoetrope tool hopes to provide new perspectives of the places around us and the changes 
+      that occur to them over time.
+    </p>
+    <br>
+    <h1>About the Developers</h1>
+    <p>
+      <b>Q Chen</b> is a data analyst at the University of Toronto's School of Cities, and 
+      currently maintains Zoetrope and develops new features for the tool. 
+    </p>
+    <p>
+      <b>Shayan Ghosh</b> is a software engineer at Amazon Web Services and was the primary 
+      developer of Zoetrope during his undergraduate studies at UC Berkeley. He is passionate 
+      about equitable housing and transportation. 
+    </p>
+    <p>
+      <b>Moulay-Zaidane Draidia</b> is a data scientist at Laurel interested in the socially 
+      driven and conscientious use of Machine Learning. He first began work on Zoetrope as 
+      an undergraduate student at UC Berkeley, eager to explore how people perceived changes 
+      in their environments. 
+    </p>
+  </div>
 {% endblock content %}
