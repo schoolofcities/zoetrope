@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<p class="blocktext">
+  Zoetrope is an open-source tool for facilitating the collection, processing, and analysis of Google Street View data across time and space. Using this tool, you can browse Google Maps and access any available street view images of a given address for its associated street view images over time. By creating a neighbourhood and using the sample search, Zoetrope can access the street view images of addresses over time from a uniform random sample. 
+</p>
 <!-- TODO: Convert into for loop (nested?) -->
 {% if user.is_authenticated %}
   <h3>API calls remaining for user {{ user.username }}: {{user.api_calls_remaining}}</h3>
   <p>Note: The number of API calls made does not necessarily match the number of points or images downloaded.</p>
 {% endif %}
+
 <div class="row mb-2">
   <div class="col-md-6">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -13,11 +17,11 @@
         <br>
         <h3 class="mb-0">Single Address Search</h3>
         <br>
-        <p class="card-text mb-auto">Enter an address to get images over time</p>
+        <p class="card-text mb-auto">Get Street View images over time of a single address</p>
         <a href="{% url 'address' %}" class="stretched-link">Explore</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        <img src="{% static 'home/streets.jpg' %}" alt="Address" width="200" height="250">
+        <img src="{% static 'home/GSV_icon.png' %}" alt="Address - public domain icon" width="200" height="250">
       </div>
     </div>
   </div>
@@ -27,11 +31,11 @@
         <br>
         <h3 class="mb-0">Neighborhood Sample Search</h3>
         <br>
-        <p class="mb-auto">Sample points in a geographic neighborhood</p>
+        <p class="mb-auto">Get Street View images over time from sampled points in a user-defined neighbourhood</p>
         <a href="{% url 'sample' %}" class="stretched-link">Explore</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        <img src="{% static 'home/randomSampling.jpg' %}" alt="Sample" width="200" height="250">
+        <img src="{% static 'home/map_with_pins.jpg' %}" alt="Neighbourhood Sample Search - public domain image" width="200" height="250">
       </div>
     </div>
   </div>
@@ -48,7 +52,7 @@
         <a href="{% url 'neighborhood' %}" class="stretched-link">Explore</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        <img src="{% static 'home/neighborhood.jpg' %}" alt="Neighborhood" width="200" height="250">
+        <img src="{% static 'home/neighbourhood.jpg' %}" alt="Neighbourhood - image by wikimedia user Mhsheikholeslami" width="200" height="250">
       </div>
     </div>
   </div>
@@ -58,11 +62,11 @@
         <br>
         <h3 class="mb-0">History</h3>
         <br>
-        <p class="card-text mb-auto">View past requests</p>
+        <p class="card-text mb-auto">View past image requests</p>
         <a href="{% url 'history' %}" class="stretched-link">Explore</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        <img src="{% static 'home/neighborhood.jpg' %}" alt="History" width="200" height="250">
+        <img src="{% static 'home/history.jpg' %}" alt="History - Dick Osseman 2018 on wikimedia" width="200" height="250">
       </div>
     </div>
   </div>
@@ -72,15 +76,33 @@
         <br>
         <h3 class="mb-0">Settings</h3>
         <br>
-        <p class="card-text mb-auto">Update user information</p>
+        <p class="card-text mb-auto">Update user login information</p>
         <a href="{% url 'update_profile' %}" class="stretched-link">Explore</a>
       </div>
       <div class="col-auto d-none d-lg-block">
-        <img src="{% static 'home/gear.jpg' %}" alt="Settings Gear" width="200" height="250">
+        <img src="{% static 'home/gear1.jpg' %}" alt="Settings Gears" width="200" height="250">
       </div>
     </div>
   </div>
+
+  <!-- <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <br>
+        <h3 class="mb-0">Single Location Selection</h3>
+        <br>
+        <p class="card-text mb-auto">Get Street View images over time of a location on map</p>
+        <a href="{% url 'address_pin' %}" class="stretched-link">Explore</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img src="{% static 'home/Google-Street-View-Pin.png' %}" 
+        alt="image from Tamal Das on MakeUseOf.com" 
+        longdesc="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/02/Google-Street-View-Featured-Image-1.jpeg" 
+        width="200" height="250">
+      </div>
+    </div>
+  </div> -->
 </div>
-<p>Have feedback? Let us know <a href=https://forms.gle/PfVMYdeJFVA8pHQH6>here</a>!</p>
+<!-- <p>Have feedback? Let us know <a href=https://forms.gle/PfVMYdeJFVA8pHQH6>here</a>!</p> -->
 
 {% endblock content %}
